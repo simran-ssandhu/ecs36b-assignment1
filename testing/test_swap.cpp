@@ -77,4 +77,23 @@ RC_GTEST_PROP(SwapTests,
     /*
      * Swap two values in an array. See that they swapped and the others did not
      */
+  //THIS IS PROLLY WRONG
+    int* array = new int[values.size()];
+    copy_vector_to_array(values, array);
+
+  std::size_t i = *rc::gen::inRange<std::size_t>(0, values.size());
+  std::size_t k = *rc::gen::inRange<std::size_t>(0, values.size());
+  RC_PRE(i != k) ;
+
+  swap(&array[i], &array[k]);
+  RC_ASSERT(array[i] == values[k]);
+  RC_ASSERT(array[k] == values[i]);
+
+  for (std::size_t j = 0; j < values.size(); ++j) {
+    if (j != k && j != i) {
+      RC_ASSERT(array[j] == values[j]);
+    }
+  }
+
+  delete [] array;
 }
