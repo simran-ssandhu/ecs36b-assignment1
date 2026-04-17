@@ -27,6 +27,28 @@ TEST(SwapTests, SimpleSwapValuesInArray) {
      * Check that the ones that swapped did swap and the ones that didn't swap
      * are still at the same locations
      */
+  int arr[6] = {1, 10, 23, 9, 25, 50};
+  // 1, 10, 10, 9, 25,
+  // 0  1   2  3   4
+
+  swap(&arr[1], &arr[3]);
+  // swap 9 and 10,  1, 9, 23, 10, 25
+  // swap 23 and 10,  1, 9, 23, 10, 25
+                    //0  1  2.  3.  4
+  //swap(&arr[4], &arr[3]);
+  // swap 23 and 25,  1, 9, 10, 23, 25
+                    //0  1  2.  3.  4
+
+//check swaped
+  EXPECT_EQ(arr[1], 9);
+  EXPECT_EQ(arr[3], 10);
+  //EXPECT_EQ(arr[3], 25);
+ // EXPECT_EQ(arr[4], 23);
+
+  //check unswapped
+  EXPECT_EQ(arr[0], 1);
+  EXPECT_EQ(arr[5], 50);
+
 }
 
 RC_GTEST_PROP(SwapTests,
