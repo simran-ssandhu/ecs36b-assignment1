@@ -58,6 +58,15 @@ RC_GTEST_PROP(SwapTests,
     /*
      * Swap two values and see if the swap was successful.
      */
+  int a_startCopy = a_start;
+  int b_startCopy = b_start;
+  int* a_startP = &a_start;
+  int* b_startP = &b_start;
+  swap(a_startP, b_startP);
+  RC_ASSERT(*a_startP == b_startCopy);
+  //RC_LOG("astart",a_start);
+  RC_ASSERT(*b_startP == a_startCopy);
+
 }
 
 
