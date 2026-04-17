@@ -12,6 +12,13 @@ TEST(SwapTests, SimpleSwapTwoValues) {
     /*
      * Swap two values and see if the swap was successful.
      */
+  int x = 12;
+  int y = 34;
+  int* firstValue = &x;
+  int* secondValue = &y;
+  swap(firstValue, secondValue);
+  EXPECT_EQ(*firstValue, 34);
+  EXPECT_EQ(*secondValue, 12);
 }
 
 TEST(SwapTests, SimpleSwapValuesInArray) {
