@@ -99,4 +99,17 @@ RC_GTEST_PROP(MinIndexOfArrayTests,
     /*
      * Check that finding the minimum of the array did not change the contents of the array.
      */
+    const auto randomInts = *rc::gen::arbitrary<std::vector<int>>();
+    int* arr = new int[randomInts.size()];
+    int* arrCopy = new int[randomInts.size()];
+    copy_vector_to_array(randomInts, arr);
+    copy_vector_to_array(randomInts, arrCopy);
+    min_index_of_array(arr, randomInts.size());
+
+    for (std::size_t i = 0; i < randomInts.size(); i++) {
+        RC_ASSERT(arr[i] == arrCopy[i]);
+    }
+
+    delete[] arr;
+    delete[] arrCopy;
 }
