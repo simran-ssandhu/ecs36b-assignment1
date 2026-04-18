@@ -53,7 +53,8 @@ int min_index_of_array(int* ar, int len) {
       min_index = i;
     }
   }
-  return ar[min_index];
+  //changed this: was originally arr[min_index] WHICH GIVES VALUE
+  return min_index;
 }
 
 void swap(int* a, int* b) {
