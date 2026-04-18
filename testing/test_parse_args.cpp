@@ -164,7 +164,6 @@ RC_GTEST_PROP(ParseArgsTests,
 
   RC_ASSERT(len_out == 0);
 
-  //delete [] ar_out;
 
 
 }
