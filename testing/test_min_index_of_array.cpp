@@ -4,6 +4,7 @@
 #include "gmock/gmock.h"
 #include "rapidcheck/gtest.h"
 #include "sorting.h"
+#include "test_helpers.h"
 
 TEST(MinIndexOfArrayTests, SimpleMinIndexAtFrontOfArray) {
     /*
