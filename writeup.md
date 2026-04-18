@@ -42,6 +42,16 @@ I changed the for loop to check if the current index is less than the min_index,
 
 ```c++
 Copy of the fixed code
+  int min_index = 0;
+//changed for loop
+  for (int i = 1; i < len; ++i) {
+    if (ar[i] < ar[min_index]) {
+      min_index = i;
+    }
+  }
+  //changed this: was originally arr[min_index] WHICH GIVES VALUE
+  return min_index;
+}
 ```
 
 ### Bug 2
