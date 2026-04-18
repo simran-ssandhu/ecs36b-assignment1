@@ -54,6 +54,7 @@ Copy of the fixed code
 }
 ```
 
+
 ### Bug 2
 
 ### Location
