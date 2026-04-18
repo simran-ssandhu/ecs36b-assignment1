@@ -62,13 +62,6 @@ TEST(MakeSortedTests, SimpleSortAverageArray) {
   EXPECT_EQ(arr[4], 23)<< "array index 4 is: " << arr[4];
   //4, 1, 10, 23, 0,
 
-  // try 1
-  //  0, 10, 23, 1, 4
-  //try2: 10, 23, 1, 4 0
-  //try3: 0, 10, 23, 1, 4
-  //try4:4, 10, 23, 0, 1
-
-
   delete[] arr;
 }
 
