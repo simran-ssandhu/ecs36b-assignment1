@@ -1,9 +1,9 @@
 # Google Test And Debugging Writeup
 
 ## Things I Thought To Test
-1. Thing 1
-2. Thing 2
-3. Thing 3
+1. Testing the swap function to see if it actually swaps two values
+2. Testing the find min index function to see if it actually returns the minimum index
+3. Test if the copy_array function is actually copying each value in the array
 ...
 
 ## Bugs
