@@ -37,6 +37,36 @@ TEST(ParseArgsTests, SimpleCheckArgumentsParsedSuccessfully) {
      * (ar_out and len_out are set to the right values).
      * Don't forget to free any memory that was dynamically allocated as part of your test.'
      */
+  //PARSE ARGS
+  /**
+  * Transform the command line arguments from their string representations to their numeric values
+  * @param argc: the number of the command line arguments
+  * @param argv: the command line arguments
+  * @param ar_out: An output parameter. The array to store the command line arguments into. It is assumed that
+    * no space has been made for the values so this function will allocate the space for the values inside of ar_out.
+    * If there are no command line arguments ar_out should be set to NULL.
+  * @param len_out:  An output parameter. The number of elements placed into ar_out.
+  */
+
+  const char* commandLine[] = {"program", "10", "20", "3"};
+  int argc = 4;
+
+  int len_out = 0;
+
+  int* ar_out = new int[argc - 1];
+
+  parse_args(argc, const_cast<char **>(commandLine), ar_out, &len_out);
+
+  EXPECT_EQ(ar_out[0], 10);
+  EXPECT_EQ(ar_out[1], 20);
+  EXPECT_EQ(ar_out[2], 3);
+  EXPECT_EQ(len_out, 3);
+
+
+
+  delete[] ar_out;
+
+
 }
 
 TEST(ParseArgsTests, SimpleCheckParseNoArgs) {
