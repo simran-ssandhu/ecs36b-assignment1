@@ -95,6 +95,16 @@ RC_GTEST_PROP(CopyArrayTests,
      * Check that the  values in the original array did not change.
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
+  int* array = new int[values.size()];
+  copy_vector_to_array(values, array);
+  int* arrayCopy = copy_array(array, sizeof(array));
+
+
+  RC_ASSERT(elements_in_vector_and_array_are_same(values, array));
+
+  delete[] array;
+  delete[] arrayCopy;
+
 
 }
 
