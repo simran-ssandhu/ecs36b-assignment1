@@ -71,6 +71,7 @@ Copy of the buggy code
 ### How the bug was located
 
 Explain how you found the bug
+After running the swap tests I realized that the values weren't actually changing and the integers weren't being swapped. 
 
 ### Description
 
