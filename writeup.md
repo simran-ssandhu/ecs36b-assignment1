@@ -13,7 +13,7 @@
 ### Location
 
 Line number(s) of the bugs.
-
+51-55
 ```c++
 Copy of the buggy code
 ```
