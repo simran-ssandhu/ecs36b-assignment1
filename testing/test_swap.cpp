@@ -32,12 +32,7 @@ TEST(SwapTests, SimpleSwapValuesInArray) {
   // 0  1   2  3   4
 
   swap(&arr[1], &arr[3]);
-  // swap 9 and 10,  1, 9, 23, 10, 25
-  // swap 23 and 10,  1, 9, 23, 10, 25
-                    //0  1  2.  3.  4
-  //swap(&arr[4], &arr[3]);
-  // swap 23 and 25,  1, 9, 10, 23, 25
-                    //0  1  2.  3.  4
+ 
 
 //check swaped
   EXPECT_EQ(arr[1], 9);
