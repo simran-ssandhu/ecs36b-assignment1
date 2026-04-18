@@ -74,6 +74,10 @@ TEST(GetSortedTests, SimpleSortArrayWithDuplicates) {
      * Check that we can sort an array where there are duplicate elements in it.
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
+    int* arr = new int[5]{12, 23, 2, 12, 1};
+    // 1, 2, 12, 12, 23
+    int* sortedArray = get_sorted(arr, 5);
+
 
 
 }
