@@ -81,6 +81,7 @@ This function swaps a and b but since it is a void function it doesn't return th
 ### Fix
 
 Explain how you fixed the bug
+I changed the function to actually use pointers so now the value at a is equal to the value at b and the value at b is equal to the value at a. This use of pointers actually changes the values of the variables outside the function. 
 
 ```c++
 Copy of the fixed code
