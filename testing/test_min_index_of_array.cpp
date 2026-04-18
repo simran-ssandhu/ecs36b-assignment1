@@ -80,7 +80,7 @@ RC_GTEST_PROP(MinIndexOfArrayTests,
      * is not larger than any of the other values in the array
      */
 
- 
+
     const auto randomInts = *rc::gen::arbitrary<std::vector<int>>();
     int* arr = new int[randomInts.size()];
     copy_vector_to_array(randomInts, arr);
