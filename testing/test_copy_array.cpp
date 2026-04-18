@@ -117,6 +117,16 @@ RC_GTEST_PROP(CopyArrayTests,
   * (ar and copy point to different locations in memory and no parts of the two arrays overlap)
   * Don't forget to free any memory that was dynamically allocated as part of your test.
   */
+  int* array = new int[values.size()];
+  copy_vector_to_array(values, array);
+  int* arrayCopy = copy_array(array, sizeof(array));
+
+
+ //>>?
+  RC_ASSERT(array != arrayCopy);
+
+  delete[] array;
+  delete[] arrayCopy;
 
 }
 
