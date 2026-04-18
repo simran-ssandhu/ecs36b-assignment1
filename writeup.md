@@ -85,6 +85,9 @@ I changed the function to actually use pointers so now the value at a is equal t
 
 ```c++
 Copy of the fixed code
+int temp = *a;
+  *a = *b;
+  *b = temp;
 ```
 
 ### Bug 3
