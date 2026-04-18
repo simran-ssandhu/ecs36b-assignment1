@@ -32,7 +32,7 @@ TEST(SwapTests, SimpleSwapValuesInArray) {
   // 0  1   2  3   4
 
   swap(&arr[1], &arr[3]);
- 
+
 
 //check swaped
   EXPECT_EQ(arr[1], 9);
@@ -58,7 +58,7 @@ RC_GTEST_PROP(SwapTests,
   int* b_startP = &b_start;
   swap(a_startP, b_startP);
   RC_ASSERT(*a_startP == b_startCopy);
-  //RC_LOG("astart",a_start);
+
   RC_ASSERT(*b_startP == a_startCopy);
 
 }
