@@ -58,6 +58,15 @@ TEST(GetSortedTests, SimpleSortAverageArray) {
     int* sortedArray = get_sorted(arr, 5);
 
 
+    EXPECT_EQ(sortedArray[0], 0);
+    EXPECT_EQ(sortedArray[1], 1);
+    EXPECT_EQ(sortedArray[2], 4);
+    EXPECT_EQ(sortedArray[3], 10);
+    EXPECT_EQ(sortedArray[4], 23);
+
+    delete[] arr;
+    delete[] sortedArray;
+
 }
 
 TEST(GetSortedTests, SimpleSortArrayWithDuplicates) {
