@@ -162,6 +162,25 @@ RC_GTEST_PROP(GetSortedTests,
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
     ;
+    int* array = new int[values.size()];
+    copy_vector_to_array(values, array);
+
+    int* arrCopy = new int[values.size()];
+    copy_vector_to_array(values, arrCopy);
+
+   get_sorted(array, values.size());
+
+
+    for (std::size_t i = 0; i + 1 < values.size(); i++) {
+        RC_ASSERT(array[i] == arrCopy[i]);
+    }
+
+    //RC_ASSERT(sortedArray != array);
+
+    //delete[] sortedArray;
+    delete[] arrCopy;
+    delete[] array;
+
 }
 
 RC_GTEST_PROP(GetSortedTests,
