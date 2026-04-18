@@ -78,6 +78,19 @@ RC_GTEST_PROP(MinIndexOfArrayTests,
     /* Check that the value at the location of the minimum index
      * is not larger than any of the other values in the array
      */
+
+ 
+    const auto randomInts = *rc::gen::arbitrary<std::vector<int>>();
+    int* arr = new int[randomInts.size()];
+    copy_vector_to_array(randomInts, arr);
+    int minIndex = min_index_of_array(arr, randomInts.size());
+
+    for (std::size_t i = 0; i < randomInts.size(); i++) {
+        RC_ASSERT(arr[minIndex] <= arr[i]);
+    }
+
+    delete [] arr;
+
 }
 
 RC_GTEST_PROP(MinIndexOfArrayTests,
