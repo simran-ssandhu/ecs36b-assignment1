@@ -37,7 +37,10 @@ int* copy_array(int* ar, int len) {
   * @param len: The length of the array to copy
   * @return: A copy of ar
   */
-  int* copy = ar;
+  int* copy = new int[len];
+  for (int i = 0; i < len; i++) {
+    copy[i] = ar[i];
+  }
   return copy;
 }
 
