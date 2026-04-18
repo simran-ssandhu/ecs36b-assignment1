@@ -79,6 +79,14 @@ TEST(GetSortedTests, SimpleSortArrayWithDuplicates) {
     int* sortedArray = get_sorted(arr, 5);
 
 
+    EXPECT_EQ(sortedArray[0], 1);
+    EXPECT_EQ(sortedArray[1], 2);
+    EXPECT_EQ(sortedArray[2], 12);
+    EXPECT_EQ(sortedArray[3], 12);
+    EXPECT_EQ(sortedArray[4], 23);
+
+    delete[] arr;
+    delete[] sortedArray;
 
 }
 
