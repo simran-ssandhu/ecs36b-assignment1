@@ -57,6 +57,18 @@ TEST(MinIndexOfArrayTests, SimpleArrayDoesNotChange) {
     /*
      * Check that finding the minimum of the array did not change the contents of the array.
      */
+    int* arr = new int[5]{34, 4, 1, 10, 5};
+    int minIndex = min_index_of_array(arr, 5);
+    EXPECT_EQ(minIndex, 2);
+
+    //check everything is same
+    EXPECT_EQ(arr[0], 34);
+    EXPECT_EQ(arr[1], 4);
+    EXPECT_EQ(arr[2], 1);
+    EXPECT_EQ(arr[3], 10);
+    EXPECT_EQ(arr[4], 5);
+
+    delete[] arr;
 }
 
 
