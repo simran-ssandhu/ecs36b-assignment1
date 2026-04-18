@@ -139,7 +139,17 @@ RC_GTEST_PROP(GetSortedTests,
 ) {
     /* Check that after sorting an array, the values are in ascending order
      * Don't forget to free any memory that was dynamically allocated as part of this test
-     */
+    */
+    int* array = new int[values.size()];
+    copy_vector_to_array(values, array);
+    int* sortedArray = get_sorted(array, values.size());
+
+    for (std::size_t i = 0; i+1 < values.size(); i++) {
+        RC_ASSERT(sortedArray[i] <= sortedArray[i + 1]);
+    }
+
+    delete[] sortedArray;
+    delete[] array;
 
 }
 
