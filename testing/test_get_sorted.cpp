@@ -10,6 +10,19 @@ TEST(GetSortedTests, SimpleSortSortedArray) {
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
 
+  int* arr = new int[5]{1, 2, 3, 4, 5};
+
+  int* sortedArray = get_sorted(arr, 5);
+
+  EXPECT_EQ(sortedArray[0], 1);
+  EXPECT_EQ(sortedArray[1], 2);
+  EXPECT_EQ(sortedArray[2], 3);
+  EXPECT_EQ(sortedArray[3], 4);
+  EXPECT_EQ(sortedArray[4], 5);
+
+  delete[] arr;
+    delete[] sortedArray;
+
 
 }
 
