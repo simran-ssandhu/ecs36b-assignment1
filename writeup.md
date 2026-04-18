@@ -120,4 +120,9 @@ I created a new array by dynamically allocating memory and making the new array 
 
 ```c++
 Copy of the fixed code
+int* copy = new int[len];
+  for (int i = 0; i < len; i++) {
+    copy[i] = ar[i];
+  }
+  return copy;
 ```
