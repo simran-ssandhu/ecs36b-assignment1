@@ -140,4 +140,31 @@ RC_GTEST_PROP(ParseArgsTests,
     /*
      * Check that you parse you can successfully parse "no" command line arguments.
      */
+
+  auto programName = *word_generator();
+  //const auto intVector = *rc::gen::arbitrary<std::vector<int>>();
+  //auto ints = vector_of_ints_to_vector_of_strings(intVector);
+
+  std::vector<std::string> commandLineStrings;
+  commandLineStrings.push_back(programName);
+
+ 
+
+  std::vector<char*> commandLineArg;
+  for (auto& s: commandLineStrings) {
+    commandLineArg.push_back(&s[0]);
+  }
+
+  int len_out = -10;
+  int holder = 0;
+  int arg_c = 1;
+  int* ar_out = &holder;
+
+  parse_args(arg_c, commandLineArg.data(), ar_out, &len_out);
+
+  RC_ASSERT(len_out == 0);
+
+  //delete [] ar_out;
+
+
 }
