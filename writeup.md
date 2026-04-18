@@ -105,6 +105,7 @@ Copy of the buggy code
 ### How the bug was located
 
 Explain how you found the bug
+The complier warned that the parameter len wasn't being used, which is when I reviewd the function and realized that each value in the array wasn't actually being copied over. 
 
 ### Description
 
