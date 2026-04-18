@@ -10,6 +10,18 @@ TEST(MakeSortedTests, SimpleSortSortedArray) {
      * Check that we can sort an array that is already sorted.
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
+  int* arr = new int[5]{1, 2, 3, 4, 5};
+
+  make_sorted(arr, 5);
+
+  EXPECT_EQ(arr[0], 1);
+  EXPECT_EQ(arr[1], 2);
+  EXPECT_EQ(arr[2], 3);
+  EXPECT_EQ(arr[3], 4);
+  EXPECT_EQ(arr[4], 5);
+
+  delete[] arr;
+
 }
 
 TEST(MakeSortedTests, SimpleSortReverseSortedArray) {
