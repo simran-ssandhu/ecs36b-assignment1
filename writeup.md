@@ -115,6 +115,8 @@ This function is just returning a copy of the pointer of the array and not retur
 ### Fix
 
 Explain how you fixed the bug
+I created a new array by dynamically allocating memory and making the new array the size of the original array. Then I set each ith element of the copy ar to the ith element of the original array. This actually fills out the array with the correct elements. 
+
 
 ```c++
 Copy of the fixed code
