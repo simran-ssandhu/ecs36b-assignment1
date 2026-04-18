@@ -77,7 +77,6 @@ RC_GTEST_PROP(SwapTests,
     /*
      * Swap two values in an array. See that they swapped and the others did not
      */
-  //THIS IS PROLLY WRONG
     int* array = new int[values.size()];
     copy_vector_to_array(values, array);
 
