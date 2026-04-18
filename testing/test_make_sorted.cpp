@@ -52,9 +52,6 @@ TEST(MakeSortedTests, SimpleSortAverageArray) {
      */
   int* arr = new int[5]{1, 10, 23, 0, 4};
   // 0, 1, 4, 10, 23
-  //first round: 0: minIndex is 3(at 0)
-  //so swap is arr[3] with ARR[0]
-  // now: 0, 10, 23, 1, 4: now i=1; find new minIndex ARR+1 this is at arr[3] or more acc arr[4]
 
   make_sorted(arr, 5);
 
