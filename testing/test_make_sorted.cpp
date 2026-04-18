@@ -50,6 +50,29 @@ TEST(MakeSortedTests, SimpleSortAverageArray) {
      * Check that we can sort an array where the elements in it are in random order.
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
+  int* arr = new int[5]{1, 10, 23, 0, 4};
+  // 0, 1, 4, 10, 23
+  //first round: 0: minIndex is 3(at 0)
+  //so swap is arr[3] with ARR[0]
+  // now: 0, 10, 23, 1, 4: now i=1; find new minIndex ARR+1 this is at arr[3] or more acc arr[4]
+
+  make_sorted(arr, 5);
+
+  EXPECT_EQ(arr[0], 0) << "array index 0 is: " << arr[0];
+  EXPECT_EQ(arr[1], 1) << "array index 1 is: " << arr[1];
+  EXPECT_EQ(arr[2], 4) << "array index 2 is: " << arr[2];
+  EXPECT_EQ(arr[3], 10) << "array index 3 is: " << arr[3];
+  EXPECT_EQ(arr[4], 23)<< "array index 4 is: " << arr[4];
+  //4, 1, 10, 23, 0,
+
+  // try 1
+  //  0, 10, 23, 1, 4
+  //try2: 10, 23, 1, 4 0
+  //try3: 0, 10, 23, 1, 4
+  //try4:4, 10, 23, 0, 1
+
+
+  delete[] arr;
 }
 
 TEST(MakeSortedTests, SimpleSortArrayWithDuplicates) {
