@@ -100,6 +100,37 @@ RC_GTEST_PROP(ParseArgsTests,
      * arguments when we receive 1 or more arguments.
      * Don't forget to free any memory that was dynamically allocated as part of this test
      */
+   auto programName = *word_generator();
+   const auto intVector = *rc::gen::arbitrary<std::vector<int>>();
+   auto ints = vector_of_ints_to_vector_of_strings(intVector);
+   std::vector<std::string> commandLineStrings;
+  commandLineStrings.push_back(programName);
+
+  for (const auto & i : ints) {
+    commandLineStrings.push_back(i);
+  }
+
+  std::vector<char*> commandLineArg;
+  for (auto& s: commandLineStrings) {
+    commandLineArg.push_back(&s[0]);
+  }
+
+  int len_out = 0;
+  int* ar_out = new int[intVector.size()];
+
+  parse_args(commandLineArg.size(), commandLineArg.data(), ar_out, &len_out);
+
+  RC_ASSERT(len_out == static_cast<int>(intVector.size()));
+
+  for (std::size_t i = 0; i<intVector.size(); i++) {
+    RC_ASSERT(intVector[i] == ar_out[i]);
+  }
+
+
+
+  delete [] ar_out;
+
+
 }
 
 RC_GTEST_PROP(ParseArgsTests,
