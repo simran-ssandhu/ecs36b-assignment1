@@ -62,6 +62,10 @@ Line number(s) of the bugs. 74-77
 
 ```c++
 Copy of the buggy code
+
+  int* temp = a;
+  a = b;
+  b = temp;
 ```
 
 ### How the bug was located
