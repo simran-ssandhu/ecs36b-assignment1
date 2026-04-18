@@ -142,8 +142,6 @@ RC_GTEST_PROP(ParseArgsTests,
      */
 
   auto programName = *word_generator();
-  //const auto intVector = *rc::gen::arbitrary<std::vector<int>>();
-  //auto ints = vector_of_ints_to_vector_of_strings(intVector);
 
   std::vector<std::string> commandLineStrings;
   commandLineStrings.push_back(programName);
