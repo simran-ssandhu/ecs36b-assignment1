@@ -98,6 +98,8 @@ Line number(s) of the bugs. 40-44
 
 ```c++
 Copy of the buggy code
+ int* copy = ar;
+  return copy;
 ```
 
 ### How the bug was located
