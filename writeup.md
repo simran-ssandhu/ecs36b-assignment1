@@ -110,6 +110,7 @@ The complier warned that the parameter len wasn't being used, which is when I re
 ### Description
 
 Describe the bug
+This function is just returning a copy of the pointer of the array and not returning the actual array. 
 
 ### Fix
 
