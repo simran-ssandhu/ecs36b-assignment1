@@ -52,6 +52,10 @@ TEST(GetSortedTests, SimpleSortAverageArray) {
      * Check that we can sort an array where the elements in it are in random order.
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
+    int* arr = new int[5]{1, 10, 23, 0, 4};
+    // 0, 1, 4, 10, 23
+
+    int* sortedArray = get_sorted(arr, 5);
 
 
 }
