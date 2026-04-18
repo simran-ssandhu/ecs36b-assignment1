@@ -119,6 +119,15 @@ TEST(GetSortedTests, SimpleCopyWasMade) {
      * (ar and copy point to different locations in memory and no parts of the two arrays overlap)
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
+    int* arr = new int[5]{1, 2, 3, 4, 5};
+
+    int* copyArr = get_sorted(arr, 5);
+
+    EXPECT_NE(arr, copyArr);
+
+    delete[] arr;
+    delete[] copyArr;
+
 
 
 }
