@@ -126,3 +126,184 @@ int* copy = new int[len];
   }
   return copy;
 ```
+
+### Bug 4
+
+### Location
+
+Line number(s) of the bugs. 27-30
+
+```c++
+Copy of the buggy code
+ for (int i = 0; i < len; ++i) {
+    int min_index = min_index_of_array(ar + i, len);
+    swap(ar + i, ar + min_index);
+  }
+```
+
+### How the bug was located
+
+Explain how you found the bug
+The make_sorted and get_sorted tests were failing, I used the debugger and traced each function call and stepped through it which is when I realized 
+### Description
+
+Describe the bug
+The indexing of this array is wrong, since the len of the original array doesn't change but the index is advancing it is actually returning the wrong index regarding the original array. Additionally, the indexes when calling the swap function are also wrong since they don't advance to the current index.
+
+### Fix
+
+Explain how you fixed the bug
+I changed the min_index so it would decrease the length as the for loop advanced so it returned an accurate minimum index since we shift it and start looking at ar+i, we are only looking at a subarray. I changed the swap call so that it deals with the original array, adding i to the min_index shifts it back to the original array. 
+
+```c++
+Copy of the fixed code
+for (int i = 0; i < len; i++) {
+    int min_index = min_index_of_array(ar + i, len-i);
+    swap(ar + i, ar + min_index + i);
+  }
+```
+
+### Bug 4
+
+### Location
+
+Line number(s) of the bugs. 27-30
+
+```c++
+Copy of the buggy code
+ for (int i = 0; i < len; ++i) {
+    int min_index = min_index_of_array(ar + i, len);
+    swap(ar + i, ar + min_index);
+  }
+```
+
+### How the bug was located
+
+Explain how you found the bug
+The make_sorted and get_sorted tests were failing, I used the debugger and traced each function call and stepped through it which is when I realized
+### Description
+
+Describe the bug
+The indexing of this array is wrong, since the len of the original array doesn't change but the index is advancing it is actually returning the wrong index regarding the original array. Additionally, the indexes when calling the swap function are also wrong since they don't advance to the current index.
+
+### Fix
+
+Explain how you fixed the bug
+I changed the min_index so it would decrease the length as the for loop advanced so it returned an accurate minimum index since we shift it and start looking at ar+i, we are only looking at a subarray. I changed the swap call so that it deals with the original array, adding i to the min_index shifts it back to the original array.
+
+```c++
+Copy of the fixed code
+for (int i = 0; i < len; i++) {
+    int min_index = min_index_of_array(ar + i, len-i);
+    swap(ar + i, ar + min_index + i);
+  }
+
+```
+
+
+
+
+### Bug 5
+
+### Location
+
+Line number(s) of the bugs.
+13-16
+
+```c++
+Copy of the buggy code
+int* sorted_ar = copy_array(ar, len);
+make_sorted(ar, len);
+return sorted_ar;
+```
+
+### How the bug was located
+
+Explain how you found the bug
+The get sorted array tests were failing even after I had fixed the make_sorted function and ran those tests. After looking through the get_sorted function I noticed the bug, since my get_sorted tests were just giving me the original unchanged array. 
+
+### Description
+
+Describe the bug
+The make_sorted function calls the wrong array, it calls the original array and then returns the sorted_ar, which is just a copy of the unsorted array. 
+### Fix
+
+Explain how you fixed the bug
+I called the make_sorted function with the sorted_ar array instead of the ar parameter. 
+```c++
+Copy of the fixed code
+  int* sorted_ar = copy_array(ar, len);
+  make_sorted(sorted_ar, len);
+  return sorted_ar;
+```
+
+
+
+### Bug 6
+
+### Location
+
+Line number(s) of the bugs.
+17-19 of formatting.cpp
+```c++
+Copy of the buggy code
+i for(int i = 0; i < len; --i){
+    printf("%d ", ar[i]);
+  }
+}
+```
+
+
+### How the bug was located
+
+Explain how you found the bug
+After all my function tests passed, I ran the main function which kept on giving me an error and exited the function early before running the sorting. While printing the inputs I entered, it kept printing zeros and then exiting the program early. 
+### Description
+
+Describe the bug
+The for loop decreases instead of incrementing which doesn't make sense for printing out the array.
+### Fix
+
+Explain how you fixed the bug
+I changed the for loop to increment each instead of decreasing. 
+```c++
+Copy of the fixed code
+  for(int i = 0; i < len; ++i){
+    printf("%d ", ar[i]);
+  }
+}
+```
+
+### Bug 7
+
+### Location
+
+Line number(s) of the bugs.
+14-16 of main.cpp
+```c++
+Copy of the buggy code
+  int* given_numbers;
+  int len;
+```
+
+
+### How the bug was located
+
+Explain how you found the bug
+While running main.cpp, I got complier warnings that given_numbers was declared but wasn't initialized anywhere.
+
+### Description
+
+Describe the bug
+given_numbers and len are declared but aren't used, given_numbers is an array of the numbers entered into the command line but in main.cpp it isn't given a length which causes an error. 
+### Fix
+
+Explain how you fixed the bug
+The amount of numbers entered is always one less then the total command line arguments, so len would be equal to argc-1. Since given_numbers is supposed to be the array for the command line arguments it needs to be the size of the amount of numbers so I used dynamic allocation to fix that. 
+```c++
+Copy of the fixed code
+  int len = argc - 1;
+  int* given_numbers = new int[len];
+```
+
+
