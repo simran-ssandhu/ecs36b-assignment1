@@ -16,6 +16,12 @@ Line number(s) of the bugs.
 51-55
 ```c++
 Copy of the buggy code
+for (int i = 1; i < len; ++i) {
+    if (ar[i] > ar[min_index]) {
+      min_index = i;
+    }
+  }
+return ar[min_index];
 ```
 
 ### How the bug was located
