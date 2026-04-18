@@ -58,7 +58,7 @@ Copy of the fixed code
 
 ### Location
 
-Line number(s) of the bugs.
+Line number(s) of the bugs. 74-77
 
 ```c++
 Copy of the buggy code
