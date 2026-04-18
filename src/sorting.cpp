@@ -47,7 +47,7 @@ int min_index_of_array(int* ar, int len) {
  */
 
   int min_index = 0;
-
+//changed for loop
   for (int i = 1; i < len; ++i) {
     if (ar[i] < ar[min_index]) {
       min_index = i;
