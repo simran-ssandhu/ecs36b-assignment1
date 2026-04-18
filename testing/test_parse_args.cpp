@@ -18,6 +18,16 @@ auto word_generator() {
 auto vector_of_ints_to_vector_of_strings(const std::vector<int>& numbers) {
     /* Create a vector of strings from a vector of ints
      */
+  std::vector<std::string> strings;
+  strings.reserve(numbers.size());
+
+  for (int number : numbers) {
+    strings.push_back(std::to_string(number));
+  }
+  return strings;
+
+
+
 }
 
 
