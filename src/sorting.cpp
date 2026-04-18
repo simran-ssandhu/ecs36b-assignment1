@@ -21,9 +21,12 @@ void make_sorted(int* ar, int len) {
  * @param ar: The array to be sorted.
  * @param len: The length of the array to be sorted.
  */
-  for (int i = 0; i < len; ++i) {
-    int min_index = min_index_of_array(ar + i, len);
-    swap(ar + i, ar + min_index);
+// 10, 1, 12, 20, 4
+  // 1, 4. 10, 12, 20
+  //
+  for (int i = 0; i < len; i++) {
+    int min_index = min_index_of_array(ar + i, len-i);
+    swap(ar + i, ar + min_index + i);
   }
 }
 
