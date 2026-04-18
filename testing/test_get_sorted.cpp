@@ -96,6 +96,20 @@ TEST(GetSortedTests, SimpleOriginalDoesNotChange) {
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
 
+    int* arr = new int[5]{12, 23, 2, 12, 1};
+    // 1, 2, 12, 12, 23
+    int* sortedArray = get_sorted(arr, 5);
+
+
+    EXPECT_EQ(arr[0], 12);
+    EXPECT_EQ(arr[1], 23);
+    EXPECT_EQ(arr[2], 2);
+    EXPECT_EQ(arr[3], 12);
+    EXPECT_EQ(arr[4], 1);
+
+    delete[] arr;
+    delete[] sortedArray;
+
 
 }
 
