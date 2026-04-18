@@ -94,7 +94,7 @@ int temp = *a;
 
 ### Location
 
-Line number(s) of the bugs.
+Line number(s) of the bugs. 40-44
 
 ```c++
 Copy of the buggy code
