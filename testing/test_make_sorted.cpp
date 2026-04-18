@@ -89,7 +89,22 @@ RC_GTEST_PROP(MakeSortedTests,
               PropertyAfterSortingValuesAreInAscendingOrder,
               ( std::vector<int> values)
 ) {
-    /* Test that after sorting an array, the values are in ascending order
-     * Don't forget to free any memory that was dynamically allocated as part of your test.
-     */
+  /* Test that after sorting an array, the values are in ascending order
+   * Don't forget to free any memory that was dynamically allocated as part of your test.
+   */
+  int* array = new int[values.size()];
+  copy_vector_to_array(values, array);
+  make_sorted(array, values.size());
+
+  if (values.size() != 0){
+  for (std::size_t i = 0; i < values.size()-1; i++) {
+    RC_ASSERT(array[i] <= array[i + 1]);
+  }
+}
+
+  delete[] array;
+
+
+
+
 }
