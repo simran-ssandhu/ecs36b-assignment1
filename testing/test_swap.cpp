@@ -42,8 +42,7 @@ TEST(SwapTests, SimpleSwapValuesInArray) {
 //check swaped
   EXPECT_EQ(arr[1], 9);
   EXPECT_EQ(arr[3], 10);
-  //EXPECT_EQ(arr[3], 25);
- // EXPECT_EQ(arr[4], 23);
+ 
 
   //check unswapped
   EXPECT_EQ(arr[0], 1);
