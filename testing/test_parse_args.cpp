@@ -9,6 +9,10 @@ auto word_generator() {
     /* Creates a generator for a string made up of
      * characters from [a - z]
      */
+  return  rc::gen::container<std::string>(
+    rc::gen::inRange('a', 'z')
+  );
+
 }
 
 auto vector_of_ints_to_vector_of_strings(const std::vector<int>& numbers) {
