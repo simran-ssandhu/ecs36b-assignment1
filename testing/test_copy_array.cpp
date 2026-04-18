@@ -12,6 +12,19 @@ TEST(CopyArrayTests, SimpleValuesAreSame) {
      * Check that the values in the copy are the same as the values in the original array.
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
+  int* arr = new int[5]{1, 2, 3, 4, 5};
+
+  int* copyArr = copy_array(arr, 5);
+
+  EXPECT_EQ(arr[0], copyArr[0]);
+  EXPECT_EQ(arr[1], copyArr[1]);
+  EXPECT_EQ(arr[2], copyArr[2]);
+  EXPECT_EQ(arr[3], copyArr[3]);
+  EXPECT_EQ(arr[4], copyArr[4]);
+
+  delete[] arr;
+  delete [] copyArr;
+
 
 
 }
