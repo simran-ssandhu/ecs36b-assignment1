@@ -34,6 +34,18 @@ TEST(CopyArrayTests, SimpleOriginalDoesNotChange) {
      * Check that the  values in the original array did not change.
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
+  int* arr = new int[5]{1, 2, 3, 4, 5};
+
+  int* copyArr = copy_array(arr, 5);
+
+  EXPECT_EQ(arr[0], 1);
+  EXPECT_EQ(arr[1], 2);
+  EXPECT_EQ(arr[2], 3);
+  EXPECT_EQ(arr[3], 4);
+  EXPECT_EQ(arr[4], 5);
+
+  delete[] arr;
+  delete [] copyArr;
 
 }
 
