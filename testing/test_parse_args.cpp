@@ -73,6 +73,22 @@ TEST(ParseArgsTests, SimpleCheckParseNoArgs) {
     /*
      * Check that you parse you can successfully parse "no" command line arguments.
      */
+  const char* commandLine[] = {"program"};
+  int argc = 1;
+
+  int len_out = -10;
+  int holder =0;
+
+  int* ar_out = &holder;
+
+  parse_args(argc, const_cast<char**>(commandLine), ar_out, &len_out);
+
+
+  //EXPECT_STREQ(ar_out[0], " ");
+  //EXPECT_EQ(ar_out[1], "");
+  //EXPECT_EQ(ar_out[2], "");
+  EXPECT_EQ(len_out, 0);
+
 }
 
 
