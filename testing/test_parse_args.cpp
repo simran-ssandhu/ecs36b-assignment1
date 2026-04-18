@@ -146,7 +146,7 @@ RC_GTEST_PROP(ParseArgsTests,
   std::vector<std::string> commandLineStrings;
   commandLineStrings.push_back(programName);
 
- 
+
 
   std::vector<char*> commandLineArg;
   for (auto& s: commandLineStrings) {
