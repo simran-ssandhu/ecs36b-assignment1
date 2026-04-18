@@ -70,6 +70,19 @@ TEST(MakeSortedTests, SimpleSortArrayWithDuplicates) {
      * Check that we can sort an array where there are duplicate elements in it.
      * Don't forget to free any memory that was dynamically allocated as part of your test.
      */
+  int* arr = new int[5]{12, 23, 2, 12, 1};
+// 1, 2, 12, 12, 23
+  make_sorted(arr, 5);
+
+  EXPECT_EQ(arr[0], 1);
+  EXPECT_EQ(arr[1], 2);
+  EXPECT_EQ(arr[2], 12);
+  EXPECT_EQ(arr[3], 12);
+  EXPECT_EQ(arr[4], 23);
+
+
+
+  delete[] arr;
 }
 
 RC_GTEST_PROP(MakeSortedTests,
