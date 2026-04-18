@@ -33,6 +33,7 @@ I located this bug by running the minimum index tests and reviewing the results 
 ### Description
 
 Describe the bug
+I realized that the array was returning the max value not the minimum, additionally it was returning the actual minimum of the array and not the minimum index of the array.
 
 ### Fix 
 
