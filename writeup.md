@@ -27,6 +27,8 @@ return ar[min_index];
 ### How the bug was located
 
 Explain how you found the bug
+I located this bug by running the minimum index tests and reviewing the results of my expected values versus what the function was actually returning. By examining these results, I first realized it was giving back the maximum value, and then I realized it wasn't actually giving me the index and instead the actual value. 
+
 
 ### Description
 
