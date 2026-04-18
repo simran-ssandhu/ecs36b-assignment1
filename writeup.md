@@ -38,6 +38,7 @@ I realized that the array was returning the max value not the minimum, additiona
 ### Fix 
 
 Explain how you fixed the bug
+I changed the for loop to check if the current index is less than the min_index, if it is than change the min_index to the current index. Then I returned the min_index instead of the ar[min_index], which gives back the actual value. 
 
 ```c++
 Copy of the fixed code
