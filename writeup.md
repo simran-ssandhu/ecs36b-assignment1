@@ -76,6 +76,7 @@ After running the swap tests I realized that the values weren't actually changin
 ### Description
 
 Describe the bug
+This function swaps a and b but since it is a void function it doesn't return these values and they don't actually get changed after the function call. 
 
 ### Fix
 
